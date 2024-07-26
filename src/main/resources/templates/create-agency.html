@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Agency</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Create Agency</h1>
+    <form th:action="@{/agencies}" th:object="${agency}" method="post">
+        <label>Name:</label>
+        <input type="text" th:field="*{name}" required/>
+        <button class="button" type="submit">Save</button>
+    </form>
+    <a class="button" th:href="@{/agencies}">Back to Agencies</a>
+</div>
+</body>
+</html>

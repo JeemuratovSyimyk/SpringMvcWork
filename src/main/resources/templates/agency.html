@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Agency Details</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Agency Details</h1>
+    <p>Name: <span th:text="${agency.name}">Agency Name</span></p>
+    <p>Number of Houses: <span th:text="${agency.houses.size()}">Number of Houses</span></p>
+    <p>Number of Customers: <span th:text="${agency.customers.size()}">Number of Customers</span></p>
+    <a class="button" th:href="@{/agencies}">Back to Agencies</a>
+</div>
+</body>
+</html>

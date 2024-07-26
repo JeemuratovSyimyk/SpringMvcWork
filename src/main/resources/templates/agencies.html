@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Agencies</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Agencies</h1>
+    <a class="button" th:href="@{/agencies/create}">Create New Agency</a>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="agency : ${agencies}">
+            <td th:text="${agency.name}">Agency Name</td>
+            <td>
+                <a class="button" th:href="@{/agencies/{id}(id=${agency.id})}">View</a>
+                <a class="button" th:href="@{/agencies/delete/{id}(id=${agency.id})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customer Details</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Customer Details</h1>
+    <p>Full Name: <span th:text="${customer.fullName}">Full Name</span></p>
+    <p>Phone Number: <span th:text="${customer.phoneNumber}">Phone Number</span></p>
+    <p>Email: <span th:text="${customer.email}">Email</span></p>
+    <p>Age: <span th:text="${customer.age}">Age</span></p>
+    <p>Agency: <span th:text="${customer.agency.name}">Agency Name</span></p>
+    <a class="button" th:href="@{/customers}">Back to Customers</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Create House</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Create House</h1>
+  <form th:action="@{/houses}" th:object="${house}" method="post">
+    <label>Type:</label>
+    <input type="text" th:field="*{type}" required/>
+    <label>Address:</label>
+    <input type="text" th:field="*{address}" required/>
+    <label>Agency:</label>
+    <select th:field="*{agency.id}" required>
+      <option th:each="agency : ${agencies}" th:value="${agency.id}" th:text="${agency.name}">Agency Name</option>
+    </select>
+    <button class="button" type="submit">Save</button>
+  </form>
+  <a class="button" th:href="@{/houses}">Back to Houses</a>
+</div>
+</body>
+</html>

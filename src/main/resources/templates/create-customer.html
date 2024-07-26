@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Customer</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Create Customer</h1>
+    <form th:action="@{/customers}" th:object="${customer}" method="post">
+        <label>Full Name:</label>
+        <input type="text" th:field="*{fullName}" required/>
+        <label>Phone Number:</label>
+        <input type="text" th:field="*{phoneNumber}" required/>
+        <label>Email:</label>
+        <input type="email" th:field="*{email}" required/>
+        <label>Age:</label>
+        <input type="number" th:field="*{age}" required/>
+        <label>Agency:</label>
+        <select th:field="*{agency.id}" required>
+            <option th:each="agency : ${agencies}" th:value="${agency.id}" th:text="${agency.name}">Agency Name</option>
+        </select>
+        <button class="button" type="submit">Save</button>
+    </form>
+    <a class="button" th:href="@{/customers}">Back to Customers</a>
+</div>
+</body>
+</html>
+<div class="card" style="width: 18rem;">
+    <img src="https://spainlifeproperty.com/wp-content/uploads/2023/08/Screen-Shot-2023-07-24-at-12.29.20-AM-1536x840-1.png" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>

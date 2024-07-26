@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Booking Details</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Booking Details</h1>
+    <p>House Type: <span th:text="${booking.house.type}">House Type</span></p>
+    <p>House Address: <span th:text="${booking.house.address}">House Address</span></p>
+    <p>Customer Full Name: <span th:text="${booking.customer.fullName}">Customer Full Name</span></p>
+    <p>Booking Date: <span th:text="${#dates.format(booking.bookingDate, 'yyyy-MM-dd HH:mm:ss')}">Booking Date</span></p>
+    <a class="button" th:href="@{/bookings}">Back to Bookings</a>
+</div>
+</body>
+</html>
+
